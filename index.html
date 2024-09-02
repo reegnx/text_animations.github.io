@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        header {
+            background-color: black;
+            color: white;
+        }
+        
+        .scrolling-text {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            -moz-animation: my-animation 5s linear infinite;
+            -webkit-animation: my-animation 5s linear infinite;
+        }
+        
+        @-webkit-keyframes my-animation {
+            from {
+                -webkit-transform: translateX(-100%);
+            }
+            to {
+                -webkit-transform: translateX(100%);
+            }
+        }
+        
+        @keyframes my-animation {
+            from {
+                -moz-transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+            to {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .blinking-text {
+            text-align: center;
+            margin-top: auto;
+            font-size: 20px;
+            color: blue;
+            animation: blink 1s infinite;
+        }
+        
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .rotating-image {
+            height: 25%;
+            animation: rotate 2s infinite linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="scrolling-text">
+            <h1>Welcome To NMAMIT</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="blinking-text">
+            <p>CSE Department</p>
+        </div>
+
+
+        <div class="rotating-image">
+            <img src="nmamit.jpeg">
+        </div>
+    </main>
+
+
+</body>
+
+</html>
